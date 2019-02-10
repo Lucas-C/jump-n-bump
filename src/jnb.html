@@ -13,7 +13,9 @@
         left: 0;
         right: 0;
         margin:auto;
-	    }
+        transform: scale(2);
+        image-rendering: optimizeSpeed;
+      }
       img {float:right; }
       img.resource { display:none; }
       br { clear: both; }
@@ -28,7 +30,7 @@
     <img class="resource" id='numbers' src='sprites/numbers.png' alt=""/>
     <img class="resource" id='rabbits' src='sprites/rabbit.png' alt=""/>
     <div data-bind="visible: current_page() === Page.Game">
-        <canvas id="screen" width="1200" height="768"></canvas>
+        <canvas id="screen" width="400" height="256"></canvas>
         <button data-bind="click: current_game().pause" >Pause game (p)</button>
     </div>
     <div data-bind="visible: current_page() == Page.Scores">

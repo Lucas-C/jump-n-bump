@@ -6,7 +6,6 @@ export function Renderer(canvas, img, level) {
     "use strict";
     var main = { num_pobs: 0, pobs: [] };
     var leftovers = { num_pobs: 0, pobs: [] };
-    var canvas_scale = 1;
     var ctx = canvas.getContext('2d');
 
     var MAX = {
@@ -53,25 +52,7 @@ export function Renderer(canvas, img, level) {
         }
     }
 
-
-    function resize_canvas() {
-        var x_scale = window.innerWidth / level.image.width;
-        var y_scale = window.innerHeight / level.image.height;
-        var new_scale = Math.floor(Math.min(x_scale, y_scale));
-
-        if (canvas_scale != new_scale) {
-            canvas_scale = new_scale;
-            canvas.width = 0;
-            canvas.height = 0;
-            canvas.width = level.image.width * canvas_scale;
-            canvas.height = level.image.height * canvas_scale;
-            ctx.scale(canvas_scale, canvas_scale);
-        }
-    }
-
     this.draw = function () {
-        resize_canvas();
-
         ctx.drawImage(level.image, 0, 0);
 
         for (var i = 0; i < env.JNB_MAX_PLAYERS; i++) {
