@@ -11,6 +11,10 @@
         flex-flow: column;
         align-items: center;
       }
+      .content {
+        max-width: 40rem;
+        margin: auto;
+      }
       canvas { 
 	    border: 0px solid black;
         display: block;
@@ -18,7 +22,7 @@
         transform: scale(2);
         image-rendering: optimizeSpeed;
       }
-      button { padding: 1rem; margin: 2rem; }
+      button { display: block; padding: 1rem; margin: 2rem auto; }
       img {float:right; }
       img.resource { display:none; }
       br { clear: both; }
@@ -36,7 +40,7 @@
         <canvas id="screen" width="400" height="256"></canvas>
         <button data-bind="click: current_game().pause" >Pause game (p)</button>
     </div>
-    <div data-bind="visible: current_page() == Page.Scores">
+    <div class="content" data-bind="visible: current_page() == Page.Scores">
         <button data-bind="click: current_game().unpause">Unpause game (p)</button>
         <br />
         <h3>Scores</h3>
@@ -59,11 +63,9 @@
                 <!-- /ko -->
             </tbody>
         </table>
-
-        <br />
-        
+        <br>
     </div>
-    <div data-bind="visible: current_page() == Page.Instructions">
+    <div class="content" data-bind="visible: current_page() == Page.Instructions">
         <h2>Jump 'n' Bump</h2>
         <img src="jbcircle.png" alt="small preview of the game"/>
         <p>
@@ -71,7 +73,7 @@
             Maybe you would like to take a look at the <a href="https://github.com/Lucas-C/jump-n-bump">Source code</a>?
         </p>
     </div>
-    <div data-bind="visible: current_page() != Page.Game">
+    <div class="content" data-bind="visible: current_page() != Page.Game">
         <button data-bind="click: restart, disabled: loading_level">Start new game</button>
         <h3>Controls:</h3>
         <ul>
