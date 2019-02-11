@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Jump'n'Bump - HTML5</title>
     <META NAME="description" CONTENT="An instant real-time multiplayer-only keyboard-crowding classic, this game pits up to four human-operated cute fuzzy widdle bunnies against each other for one goal only: lagomorphic cranial domination.">
     <link rel="shortcut icon" href="rabbit.ico" />
-    <style type="text/css">
+    <style>
       .container {
         height: 100vh;
         display: flex;
@@ -15,8 +15,8 @@
         max-width: 40rem;
         margin: auto;
       }
-      canvas { 
-	    border: 0px solid black;
+      canvas {
+        border: 0px solid black;
         display: block;
         margin:auto;
         transform: scale(2);
@@ -45,11 +45,13 @@
         <br />
         <h3>Scores</h3>
         <table data-bind="with: scores_viewmodel">
-            <tr>
-                <!-- ko foreach: player_row -->
-                    <th data-bind="text: $data"></th>
-                <!-- /ko -->
-            </tr>
+            <thead>
+                <tr>
+                    <!-- ko foreach: player_row -->
+                        <th data-bind="text: $data"></th>
+                    <!-- /ko -->
+                </tr>
+            </thead>
             <tbody>
                 <!-- ko foreach: score_rows -->
                     <tr>
@@ -89,7 +91,7 @@
         <h3>Load level:</h3>
         <p>Load any of the levels found on <a href="http://www.brainchilddesign.com/games/jumpnbump/levels/levels1.html" target="_blank">Brainchild Design's website</a></p>
         <input id="level_input" type="file" accept=".dat" data-bind="event: { change: load_level }" />
-        <br />
+        <br>
     </div>
 </body>
 </html>
