@@ -44,6 +44,38 @@ function ViewModel() {
             loader.load(file);
         }
     }
+
+    this.levels = [
+        {name: 'caves'},
+        {name: 'cocaine'},
+        {name: 'green'},
+        {name: 'jump2'},
+        {name: 'kingofthehill'},
+        {name: 'mario'},
+        {name: 'sgeneral'},
+        {name: 'spring'},
+        {name: 'swamp'},
+        {name: 'thomas'},
+        {name: 'topsy'},
+        {name: 'waterfall'},
+    ]
+    this.load_hosted_level = function (level) {
+        self.loading_level(true);
+        fetch('/levels/'+level.name+'/'+level.name+'.dat').then(response => {
+            response.blob().then(data => {
+                let file = new File([data], level.name+'.dat');
+
+                document.addEventListener(loader.on_loaded_event_text, function () {
+                    self.current_level = loader.read_level();
+                    self.current_game(new Game_Session(self.current_level));
+                    self.loading_level(false);
+                    self.current_game().start();
+                });
+
+                loader.load(file);
+            });
+        });
+    }
 };
 
 ko.applyBindings(new ViewModel());
