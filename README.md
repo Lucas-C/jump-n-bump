@@ -3,21 +3,16 @@
 # jump-n-bump
 HTML5 port by [GrahamTheCoder](https://github.com/GrahamTheCoder) of the [open source](https://github.com/fschulze/jumpnbump) [DOS classic](https://icculus.org/jumpnbump/) by [Brainchild Design](http://www.bitbliss.com)
 
-Keyboard map
+This fork only adds online hosting with GitHub pages: https://lucas-c.github.io/jump-n-bump/
 
-M: toggle sound
-
-1-4: toggle player 1-4
-
-Alt + 1-4: toggle ai for player 1-4
-
-Arrows: control player 1
-
-WAD: control player 2
-
-JIL: control player 3
-
-NumPad: control player 4
+Keyboard map:
+- M: toggle sound
+- 1-4: toggle player 1-4
+- Alt + 1-4: toggle ai for player 1-4
+- Arrows: control player 1
+- WAD: control player 2
+- JIL: control player 3
+- NumPad: control player 4
 
 ## Development
 

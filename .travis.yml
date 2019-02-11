@@ -4,7 +4,7 @@ cache: npm
 before_script: npm install
 script:
 - npm run build
-- cp -t . game/index.html game/jump-n-bump.js
+- cp -rt . game/index.html game/jump-n-bump.js game/jbcircle.png game/levels game/sprites
 deploy:
   provider: pages
   skip-cleanup: true
