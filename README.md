@@ -1,3 +1,5 @@
+[![](https://travis-ci.org/Lucas-C/jump-n-bump.svg?branch=master)](https://travis-ci.org/Lucas-C/jump-n-bump)
+
 # jump-n-bump
 HTML5 port by [GrahamTheCoder](https://github.com/GrahamTheCoder) of the [open source](https://github.com/fschulze/jumpnbump) [DOS classic](https://icculus.org/jumpnbump/) by [Brainchild Design](http://www.bitbliss.com)
 
